@@ -1,0 +1,46 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:headOffices="clr-namespace:DddInAction.Client.HeadOffices">
+    <DataTemplate x:Key="DashboardViewModel" DataType="headOffices:DashboardViewModel">
+
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Top" FontWeight="Bold" Text="Head office:" Margin="5 5 0 0" />
+            
+            <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+                <Label Content="{Binding HeadOffice.Balance}" ContentStringFormat="Balance: {0:C2}" />
+                <Label Content="{Binding HeadOffice.Cash}" ContentStringFormat="Cash: {0}" />
+            </StackPanel>
+
+            <TextBlock DockPanel.Dock="Top" FontWeight="Bold" Text="Snack machines:" Margin="5 10 0 0" />
+
+            <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+                <Button Command="{Binding ShowSnackMachineCommand}" CommandParameter="{Binding ElementName=grdSnackMachines, Path=SelectedItem}" Content="Show" />
+                <Button Command="{Binding UnloadCashCommand}" CommandParameter="{Binding ElementName=grdSnackMachines, Path=SelectedItem}" Content="Unload cash" />
+            </StackPanel>
+
+            <DataGrid DockPanel.Dock="Top" ItemsSource="{Binding SnackMachines}" IsReadOnly="True" AutoGenerateColumns="False"
+                      x:Name="grdSnackMachines" SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="MoneyInside" Binding="{Binding MoneyInside, StringFormat={}{0:C2}}" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <TextBlock DockPanel.Dock="Top" FontWeight="Bold" Text="ATMs:" Margin="5 20 0 0" />
+
+            <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+                <Button Command="{Binding ShowAtmCommand}" CommandParameter="{Binding ElementName=grdAtms, Path=SelectedItem}" Content="Show" />
+                <Button Command="{Binding LoadCashToAtmCommand}" CommandParameter="{Binding ElementName=grdAtms, Path=SelectedItem}" Content="Load cash" />
+            </StackPanel>
+
+            <DataGrid ItemsSource="{Binding Atms}" IsReadOnly="True" AutoGenerateColumns="False"
+                      x:Name="grdAtms" SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="Cash" Binding="{Binding Cash, StringFormat={}{0:C2}}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+
+    </DataTemplate>
+</ResourceDictionary>
