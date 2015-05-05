@@ -2,10 +2,10 @@
 using System.Data;
 using System.Linq;
 
+using DddInAction.Logic.Common;
+
 using NHibernate;
 using NHibernate.Linq;
-
-using NullGuard;
 
 
 namespace DddInAction.Logic.Utils
@@ -56,8 +56,8 @@ namespace DddInAction.Logic.Utils
         }
 
 
-        [return: AllowNull]
-        internal T Get<T>(long id)
+        internal Maybe<T> Get<T>(long id) 
+            where T : class
         {
             return _session.Get<T>(id);
         }

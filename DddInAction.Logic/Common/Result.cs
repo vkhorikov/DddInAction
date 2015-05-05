@@ -20,8 +20,7 @@ namespace DddInAction.Logic.Common
 
         protected Result(bool success, string error)
         {
-            Contracts.Require(success || !error.IsNullOrEmpty());
-            Contracts.Require(!success || error.IsNullOrEmpty());
+            Contracts.Require((success && error == string.Empty) || (!success && error != string.Empty));
 
             Success = success;
             Error = error;
@@ -72,7 +71,7 @@ namespace DddInAction.Logic.Common
         protected internal Result([AllowNull] T value, bool success, string error)
             : base(success, error)
         {
-            Contracts.Require(value != null || !success);
+            Contracts.Require((success && value != null) || (!success && value == null));
 
             Value = value;
         }

@@ -16,7 +16,7 @@ namespace DddInAction.Logic.HeadOffices
         {
             using (UnitOfWork unitOfWork = new UnitOfWork())
             {
-                Instance = unitOfWork.Get<HeadOffice>(HeadOfficeId);
+                Instance = unitOfWork.Get<HeadOffice>(HeadOfficeId).Value;
             }
         }
     }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using DddInAction.Logic.Utils;
-
 using NHibernate;
 
 using NullGuard;

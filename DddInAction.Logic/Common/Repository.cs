@@ -19,7 +19,7 @@ namespace DddInAction.Logic.Common
         }
 
 
-        protected virtual Result SaveCore(T entity)
+        protected Result SaveCore(T entity)
         {
             try
             {

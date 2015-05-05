@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.Contracts;
 
 using DddInAction.Logic.Utils;
 
@@ -9,6 +8,7 @@ using NullGuard;
 namespace DddInAction.Logic.Common
 {
     public struct Maybe<T>
+        where T : class
     {
         private readonly T _value;
 
