@@ -6,7 +6,7 @@ using DddInAction.Logic.Common;
 
 namespace DddInAction.Logic.HeadOffices
 {
-    internal class BalanceHandler : IHandler<BalanceChangedEvent>
+    internal class BalanceChangedEventHandler : IHandler<BalanceChangedEvent>
     {
         public void Handle(BalanceChangedEvent domainEvent)
         {

@@ -57,7 +57,7 @@
     <Compile Include="Atms\AtmDto.cs" />
     <Compile Include="Common\DomainEvents_old.cs" />
     <Compile Include="Common\Maybe.cs" />
-    <Compile Include="HeadOffices\BalanceHandler.cs" />
+    <Compile Include="HeadOffices\BalanceChangedEventHandler.cs" />
     <Compile Include="Common\DomainEvents.cs" />
     <Compile Include="Common\IDomainEvent.cs" />
     <Compile Include="Common\IHandler.cs" />
