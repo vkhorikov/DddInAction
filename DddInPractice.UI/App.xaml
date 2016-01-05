@@ -1,0 +1,15 @@
+﻿<Application x:Class="DddInPractice.Logic.UI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Common/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Common/Images.xaml" />
+                <ResourceDictionary Source="SnackMachines/SnackMachineViewModel.xaml" />
+                <ResourceDictionary Source="Atms/AtmViewModel.xaml" />
+                <ResourceDictionary Source="Management/DashboardViewModel.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

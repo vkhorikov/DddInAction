@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF8A6D06-E1DF-4112-9CEA-4195F54CA89C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DddInPractice.Logic</RootNamespace>
+    <AssemblyName>DddInPractice.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Atms\Atm.cs" />
+    <Compile Include="Atms\AtmDto.cs" />
+    <Compile Include="Atms\AtmMap.cs" />
+    <Compile Include="Atms\AtmRepository.cs" />
+    <Compile Include="Atms\BalanceChangedEvent.cs" />
+    <Compile Include="Atms\PaymentGateway.cs" />
+    <Compile Include="Common\AggregateRoot.cs" />
+    <Compile Include="Common\DomainEvents_old.cs" />
+    <Compile Include="Common\DomainEvents.cs" />
+    <Compile Include="Common\Entity.cs" />
+    <Compile Include="Common\IDomainEvent.cs" />
+    <Compile Include="Common\IHandler.cs" />
+    <Compile Include="Management\BalanceChangedEventHandler.cs" />
+    <Compile Include="Management\HeadOffice.cs" />
+    <Compile Include="Management\HeadOfficeInstance.cs" />
+    <Compile Include="Management\HeadOfficeMap.cs" />
+    <Compile Include="Management\HeadOfficeRepository.cs" />
+    <Compile Include="SnackMachines\SnackMachineDto.cs" />
+    <Compile Include="Utils\EventListener.cs" />
+    <Compile Include="Utils\Initer.cs" />
+    <Compile Include="SharedKernel\Money.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\Repository.cs" />
+    <Compile Include="Utils\SessionFactory.cs" />
+    <Compile Include="SnackMachines\Slot.cs" />
+    <Compile Include="SnackMachines\SlotMap.cs" />
+    <Compile Include="SnackMachines\Snack.cs" />
+    <Compile Include="SnackMachines\SnackMachine.cs" />
+    <Compile Include="SnackMachines\SnackMachineMap.cs" />
+    <Compile Include="SnackMachines\SnackMachineRepository.cs" />
+    <Compile Include="SnackMachines\SnackMap.cs" />
+    <Compile Include="SnackMachines\SnackPile.cs" />
+    <Compile Include="Common\ValueObject.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

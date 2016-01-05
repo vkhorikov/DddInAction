@@ -1,0 +1,110 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:snackMachines="clr-namespace:DddInPractice.UI.SnackMachines">
+    <DataTemplate x:Key="SnackMachineViewModel" DataType="snackMachines:SnackMachineViewModel">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <DataGrid Grid.Column="0" Grid.Row="0" ItemsSource="{Binding Piles}" IsReadOnly="True" AutoGenerateColumns="False"
+                      SelectionMode="Single" HeadersVisibility="None" GridLinesVisibility="None" IsHitTestVisible="False"
+                      BorderThickness="0" Margin="80 0 0 0" Background="White">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Path=Image}" Width="{Binding Path=ImageWidth}" Margin="0 20 0 0" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel VerticalAlignment="Center" Margin="10 20 0 0">
+                                    <Label Content="{Binding Path=Price}" FontSize="20" FontWeight="Bold" />
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <Label Content="{Binding Path=Amount}" FontSize="18" FontWeight="Bold" Margin="0" Padding="0" />
+                                        <Label Content="left" Margin="3 6 0 0" Padding="0"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" Grid.Row="0" Content="Buy #1" FontSize="18" Padding="10" Margin="10" Command="{Binding BuySnackCommand}" CommandParameter="1" />
+                <Button Grid.Column="1" Grid.Row="0" Content="Buy #2" FontSize="18" Padding="10" Margin="10" Command="{Binding BuySnackCommand}" CommandParameter="2" />
+                <Button Grid.Column="2" Grid.Row="0" Content="Buy #3" FontSize="18" Padding="10" Margin="10" Command="{Binding BuySnackCommand}" CommandParameter="3" />
+
+                <StackPanel Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Content="Money inserted:" FontSize="18" />
+                    <Label Content="{Binding MoneyInTransaction}" FontSize="18" FontWeight="Bold" />
+                </StackPanel>
+
+                <Button Grid.Column="0" Grid.Row="2" Content="Put ¢1" FontSize="18" Padding="10" Margin="10" Command="{Binding InsertCentCommand}" />
+                <Button Grid.Column="1" Grid.Row="2" Content="Put ¢10" FontSize="18" Padding="10" Margin="10" Command="{Binding InsertTenCentCommand}" />
+                <Button Grid.Column="2" Grid.Row="2" Content="Put ¢25" FontSize="18" Padding="10" Margin="10" Command="{Binding InsertQuarterCommand}" />
+
+                <Button Grid.Column="0" Grid.Row="3" Content="Put $1" FontSize="18" Padding="10" Margin="10" Command="{Binding InsertDollarCommand}" />
+                <Button Grid.Column="1" Grid.Row="3" Content="Put $5" FontSize="18" Padding="10" Margin="10" Command="{Binding InsertFiveDollarCommand}" />
+                <Button Grid.Column="2" Grid.Row="3" Content="Put $20" FontSize="18" Padding="10" Margin="10" Command="{Binding InsertTwentyDollarCommand}" />
+
+                <Button Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="4" Content="Return money" Command="{Binding ReturnMoneyCommand}"
+                        FontSize="18" Padding="10" Margin="10"/>
+
+                <Label Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="5" Content="{Binding Message}" HorizontalAlignment="Center" FontSize="16" />
+            </Grid>
+
+            <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0 10 0 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Content="Money inside:" FontSize="20" />
+                    <Label Content="{Binding MoneyInside}" FontSize="20" FontWeight="Bold" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                    <Image Source="{StaticResource img1Cent}" Width="100" />
+                    <Label Content="{Binding MoneyInside.OneCentCount}" FontSize="20" FontWeight="Bold" Margin="10 30 30 0" />
+
+                    <Image Source="{StaticResource img10Cent}" Width="100" />
+                    <Label Content="{Binding MoneyInside.TenCentCount}" FontSize="20" FontWeight="Bold" Margin="10 30 30 0" />
+
+                    <Image Source="{StaticResource img25Cent}" Width="100" />
+                    <Label Content="{Binding MoneyInside.QuarterCount}" FontSize="20" FontWeight="Bold" Margin="10 30 30 0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                    <Image Source="{StaticResource img1Dollar}" Width="100" />
+                    <Label Content="{Binding MoneyInside.OneDollarCount}" FontSize="20" FontWeight="Bold" Margin="10 3 30 0" />
+
+                    <Image Source="{StaticResource img5Dollar}" Width="100" />
+                    <Label Content="{Binding MoneyInside.FiveDollarCount}" FontSize="20" FontWeight="Bold" Margin="10 3 30 0" />
+
+                    <Image Source="{StaticResource img20Dollar}" Width="100" />
+                    <Label Content="{Binding MoneyInside.TwentyDollarCount}" FontSize="20" FontWeight="Bold" Margin="10 3 30 0" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+    </DataTemplate>
+</ResourceDictionary>

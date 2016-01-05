@@ -1,0 +1,16 @@
+﻿<Window x:Class="DddInPractice.UI.Common.CustomWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:common="clr-namespace:DddInPractice.UI.Common"
+        Title="{Binding Path=Caption}" Height="650" Width="800"
+        common:DialogCloser.DialogResult="{Binding Path=DialogResult}"
+        WindowStartupLocation="CenterOwner"
+        Icon="{StaticResource imgApplicationIcon}">
+    <Grid>
+        <Grid.Resources>
+            <common:MainDataTemplateSelector x:Key="selector" />
+        </Grid.Resources>
+
+        <ContentPresenter ContentTemplateSelector="{StaticResource selector}" Content="{Binding}"></ContentPresenter>
+    </Grid>
+</Window>

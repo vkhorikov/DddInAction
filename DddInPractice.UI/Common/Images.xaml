@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <ImageSource x:Key="imgSoda">../Images/Soda.png</ImageSource>
+    <ImageSource x:Key="imgChocolate">../Images/Chocolate.png</ImageSource>
+    <ImageSource x:Key="imgGum">../Images/Gum.png</ImageSource>
+
+    <ImageSource x:Key="img1Cent">../Images/1c.png</ImageSource>
+    <ImageSource x:Key="img10Cent">../Images/10c.png</ImageSource>
+    <ImageSource x:Key="img25Cent">../Images/25c.png</ImageSource>
+    <ImageSource x:Key="img1Dollar">../Images/1d.png</ImageSource>
+    <ImageSource x:Key="img5Dollar">../Images/5d.png</ImageSource>
+    <ImageSource x:Key="img20Dollar">../Images/20d.png</ImageSource>
+
+    <ImageSource x:Key="imgApplicationIcon">../Images/Icon.png</ImageSource>
+
+</ResourceDictionary>
