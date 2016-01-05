@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DddInPractice.UI", "DddInPr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DddInPractice.Logic", "DddInPractice.Logic\DddInPractice.Logic.csproj", "{AF8A6D06-E1DF-4112-9CEA-4195F54CA89C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8C0482A2-46FE-471A-8A19-E2576A357A92}"
+	ProjectSection(SolutionItems) = preProject
+		DBCreationScript.txt = DBCreationScript.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

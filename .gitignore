@@ -6,6 +6,7 @@ _NCrunch_*
 *.suo
 *.ncrunchsolution.*
 *.ncrunchsolution
+*.user
 packages/*
 *.DotSettings.*
 
