@@ -9,4 +9,4 @@ How to Get Started
 In order to run the application, you need to [create a database][L2] and change the connection string in the [composition root][L3]
 
 [L2]: DBCreationScript.txt
-[L3]: DddInPractice.Logic/Utils/Initer.cs
+[L3]: DddInPractice.UI/App.xaml.cs
