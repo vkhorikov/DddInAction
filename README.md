@@ -1,7 +1,7 @@
 Welcome to DDD in Practice
 =====================
 
-This is the source code for the DDD in Practice Pluralsight course (the link is coming soon).
+This is the source code for the DDD in Practice [Pluralsight course][L4].
 
 How to Get Started
 --------------
@@ -15,3 +15,4 @@ Licence
 [L2]: DBCreationScript.txt
 [L3]: DddInPractice.UI/App.xaml.cs
 [L1]: http://www.apache.org/licenses/LICENSE-2.0
+[L4]: https://www.pluralsight.com/courses/domain-driven-design-in-practice
