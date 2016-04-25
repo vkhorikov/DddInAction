@@ -101,7 +101,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[SnackMachine](
-	[SnackMachineID] [bigint] IDENTITY(1,1) NOT NULL,
+	[SnackMachineID] [bigint] NOT NULL,
 	[OneCentCount] [int] NOT NULL,
 	[TenCentCount] [int] NOT NULL,
 	[QuarterCount] [int] NOT NULL,
