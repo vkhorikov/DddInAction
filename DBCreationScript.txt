@@ -140,13 +140,9 @@ GO
 INSERT [dbo].[Snack] ([SnackID], [Name]) VALUES (2, N'Soda')
 GO
 INSERT [dbo].[Snack] ([SnackID], [Name]) VALUES (3, N'Gum')
-GO
-SET IDENTITY_INSERT [dbo].[SnackMachine] ON 
 
 GO
 INSERT [dbo].[SnackMachine] ([SnackMachineID], [OneCentCount], [TenCentCount], [QuarterCount], [OneDollarCount], [FiveDollarCount], [TwentyDollarCount]) VALUES (1, 10, 10, 10, 10, 10, 10)
-GO
-SET IDENTITY_INSERT [dbo].[SnackMachine] OFF
 GO
 ALTER TABLE [dbo].[Slot] ADD  CONSTRAINT [DF_Slot_Position]  DEFAULT ((1)) FOR [Position]
 GO
