@@ -43,7 +43,6 @@ namespace DddInPractice.Tests
             Money hundredCents = new Money(100, 0, 0, 0, 0, 0);
 
             dollar.Should().NotBe(hundredCents);
-            dollar.GetHashCode().Should().NotBe(hundredCents.GetHashCode());
         }
 
         [Theory]
