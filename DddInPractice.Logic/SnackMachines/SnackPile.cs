@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 using DddInPractice.Logic.Common;
 
 namespace DddInPractice.Logic.SnackMachines
@@ -34,22 +36,11 @@ namespace DddInPractice.Logic.SnackMachines
             return new SnackPile(Snack, Quantity - 1, Price);
         }
 
-        protected override bool EqualsCore(SnackPile other)
+        protected override IEnumerable<object> GetEqualityComponents()
         {
-            return Snack == other.Snack
-                && Quantity == other.Quantity
-                && Price == other.Price;
-        }
-
-        protected override int GetHashCodeCore()
-        {
-            unchecked
-            {
-                int hashCode = Snack.GetHashCode();
-                hashCode = (hashCode * 397) ^ Quantity;
-                hashCode = (hashCode * 397) ^ Price.GetHashCode();
-                return hashCode;
-            }
+            yield return Snack;
+            yield return Quantity;
+            yield return Price;
         }
     }
 }
